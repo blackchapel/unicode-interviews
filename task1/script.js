@@ -9,19 +9,19 @@ for (let i = 0; i < n; i++) {
     let word = readline.question();
 
     if (i === 0) {
-        arr[i] = {Word: word, Occurance: 1};
+        arr[i] = {Word: word, Occurence: 1};
     }
 
     else {
         for (let j = 0; j < arr.length; j++) {
             if (word === arr[j].Word) {
-                arr[j].Occurance += 1; 
+                arr[j].Occurence += 1; 
                 c++;          
             }
         }
         
         if (c === 0) {
-            arr.push({Word: word, Occurance: 1});
+            arr.push({Word: word, Occurence: 1});
         }
     }
 }
@@ -29,7 +29,7 @@ for (let i = 0; i < n; i++) {
 let combinedString = "";
 
 arr.forEach((item) => {
-    combinedString += (item.Occurance).toString() + " ";
+    combinedString += (item.Occurence).toString() + " ";
 });
 
 console.log(arr.length);
