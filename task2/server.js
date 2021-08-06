@@ -22,7 +22,7 @@ app.get("/breakingbad", async (req, res) => {
 });
 
 // Bonus
-app.get("/brettercallsaul", async (req, res) => {
+app.get("/bettercallsaul", async (req, res) => {
     // Fetching the data
     const response = await fetch("https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul");
 
