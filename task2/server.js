@@ -38,6 +38,9 @@ app.get("/bettercallsaul", async (req, res) => {
 
         // Parsing the data in json format
         const data = await response.json();
+
+        // Sending a response
+        res.send(data);
     }
     catch(error) {
         // Logging error if it occurs
@@ -46,7 +49,4 @@ app.get("/bettercallsaul", async (req, res) => {
 
     // Logging the status code
     console.log(res.statusCode);
-
-    // Sending a response
-    res.send(data);
 });
