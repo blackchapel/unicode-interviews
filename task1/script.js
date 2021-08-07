@@ -29,7 +29,7 @@ for (let i = 0; i < n; i++) {
         
         // adding to the array if its a distint word
         if (c === 0) {
-            arr.push({word: word, occurence: 1});
+            arr.push({word: s, occurence: 1});
         }
     }
 }
@@ -51,12 +51,10 @@ arr.sort((a, b) => {
     return b.occurence - a.occurence;
 });
 
-console.log("");
-console.log("Bonus: ");
-console.log(`Most- ${arr[0].word}`);
+console.log("\nBONUS: ");
+console.log("Sorted Array-")
 arr.forEach((item) => {
-    if(item.occurence === 1) {
-        console.log(`Least- ${item.word}`);
-    }
+    console.log(item.word);
 });
-
+console.log(`Most- ${arr[0].word}`);
+console.log(`Least- ${arr[arr.length - 1].word}`);
