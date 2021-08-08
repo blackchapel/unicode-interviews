@@ -36,9 +36,44 @@ app.post("/", (req, res) => {
         else {
             // Logging the errors
             console.log(err);
+            console.log(re.status);
         }
     });
 });
+
+// Task 4
+app.post("/delete", (req,res) => {
+    // Storing the id of the character to be deleted 
+    const id = req.body.delete;
+
+    // Deleteing the character from the database
+    Character.deleteOne({_id: id}, (error) => {
+        if (!error) {
+            // Sending back a reponse
+            res.redirect("/data");
+        }
+         else {
+            // Logging the errors
+            console.log(error);
+            console.log(res.status);
+        }
+    });
+ });
+
+// Displaying the Database
+let data = [];
+app.get("/data", async (req, res) => {
+    await Character.find({}, (error, characters) => {
+        if(!error){
+            data = characters;
+            res.send(data);
+        }
+        else {
+          console.log(err);
+          console.log(res.status);
+        }
+      });
+})
 
 // Listening on port 3000
 app.listen(3000, () => {
