@@ -35,7 +35,7 @@ app.post("/", (req, res) => {
         }
         else {
             // Logging the errors
-            console.log(err);
+            console.log(error);
             console.log(re.status);
         }
     });
@@ -69,7 +69,7 @@ app.get("/data", async (req, res) => {
             res.send(data);
         }
         else {
-          console.log(err);
+          console.log(error);
           console.log(res.status);
         }
       });
